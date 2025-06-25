@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHAMIS FUNDI - Huduma Mbalimbali</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a5fb4;
+            --secondary: #e66100;
+            --accent: #c64600;
+            --light: #f6f5f4;
+            --dark: #241f31;
+            --success: #26a269;
+            --shadow: 0 4px 12px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            color: var(--dark);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            color: var(--primary);
+        }
+        
+        .logo i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 1.8rem;
+        }
+        
+        .nav-menu a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 95, 180, 0.85), rgba(230, 97, 0, 0.85)), url('https://images.unsplash.com/photo-1592921870789-04563d55041c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 1.1rem 2.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(230, 97, 0, 0.4);
+            min-width: 240px;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(230, 97, 0, 0.5);
+        }
+        
+        .btn-primary {
+            background-color: white;
+            color: var(--primary);
+            box-shadow: 0 4px 10px rgba(26, 95, 180, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--light);
+            color: var(--dark);
+            box-shadow: 0 8px 15px rgba(26, 95, 180, 0.4);
+        }
+        
+        /* Services Section */
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: var(--secondary);
+            border-radius: 5px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .service-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 2rem;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+            font-size: 1.6rem;
+        }
+        
+        .service-content p {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            margin-bottom: 1.8rem;
+            color: var(--primary);
+            font-size: 2.4rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #444;
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 450px;
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+        
+        .product-content {
+            padding: 1.8rem;
+        }
+        
+        .product-content h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+        
+        .product-content p {
+            color: #555;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 4rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            font-size: 1.4rem;
+        }
+        
+        .contact-details h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+        
+        .contact-details p {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 8px rgba(26, 95, 180, 0.3);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            background-color: var(--secondary);
+            box-shadow: 0 8px 15px rgba(230, 97, 0, 0.4);
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 95, 180, 0.2);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 180px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 1.5rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-col h3 {
+            position: relative;
+            margin-bottom: 1.8rem;
+            padding-bottom: 0.8rem;
+            font-size: 1.6rem;
+            color: white;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 3px;
+        }
+        
+        .footer-col p {
+            color: #ddd;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            padding: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+            padding-left: 8px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            font-size: 1rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .about-image {
+                order: -1;
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: var(--transition);
+                padding: 2rem 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 1.5rem 0;
+            }
+            
+            .hero {
+                height: 80vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 75vh;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .contact-container {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-store"></i>
+                <span>KHAMIS FUNDI</span>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="active">Nyumbani</a></li>
+                <li><a href="#about">Kuhusu</a></li>
+                <li><a href="#services">Huduma</a></li>
+                <li><a href="#products">Bidhaa</a></li>
+                <li><a href="#contact">Mawasiliano</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>KHAMIS FUNDI</h1>
+            <p>Huduma Bora za Vocha, Gesi, Perfume, na Huduma za Benki katika Kigamboni, Dar es Salaam</p>
+            <div class="hero-btns">
+                <a href="#services" class="btn btn-primary">Tazama Huduma Zetu</a>
+                <a href="#contact" class="btn">Wasiliana Sasa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Huduma Zetu</h2>
+                <p>Tunatoa huduma mbalimbali kwa wateja wetu kwa urahisi na ufanisi</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="fundi.jpg" alt="Vocha za Simu">
+                    </div>
+                    <div class="service-content">
+                        <h3>Vifurishi vya Vocha Mitandao Yote</h3>
+                        <p>Nunua vocha na vifurushi kwa mitandao yote ya simu nchini Tanzania. Tunaweza kukupa vocha kwa gharama nafuu zaidi.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="gas.jpg" alt="Gesi">
+                    </div>
+                    <div class="service-content">
+                        <h3>Uuzaji na Usambazaji wa Gesi</h3>
+                        <p>Gesi salama na za uhakika kwa ajili ya matumizi yako ya nyumbani au biashara. Tuna usambazaji wa haraka.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="marashi.jpg" alt="Perfume">
+                    </div>
+                    <div class="service-content">
+                        <h3>Perfume na Mafuta ya Kupaka</h3>
+                        <p>Perfume asilia na mafuta bora ya kupaka kutoka kwa bidhaa maarufu duniani kwa bei nafuu.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="fedha.jpg" alt="Huduma za Kibenki">
+                    </div>
+                    <div class="service-content">
+                        <h3>Huduma za Kibenki</h3>
+                        <p>Tunatuma na kupokea fedha kutoka Benki mbalimbali kamavile NMB, CRDB na NBC.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="miamala-pic.jpg" alt="Kutuma na Kupokea Pesa">
+                    </div>
+                    <div class="service-content">
+                        <h3>Kutuma na Kupokea Pesa</h3>
+                        <p>Huduma za haraka za kutuma na kupokea pesa kwa mitandao yote ya simu nchini Tanzania.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="huduma.jpg" alt="Huduma Nyinginezo">
+                    </div>
+                    <div class="service-content">
+                        <h3>Huduma Nyinginezo</h3>
+                        <p>Pia tunatoa huduma nyingine kama vile mauzo ya simu, vifaa vya simu, na huduma za mtandao.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kuhusu Sisi</h2>
+                <p>Jinsi tulivyoanza na malengo yetu ya sasa na ya baadaye</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Historia ya KHAMIS FUNDI</h2>
+                    <p>Tulianza mwaka 2018 kama duka dogo la simu na huduma za mtandao katika eneo la Kigamboni, Dar es Salaam. Kwa miaka kadhaa iliyopita, tumekua na kuongeza huduma mbalimbali kwa kuzingatia mahitaji ya wateja wetu.</p>
+                    <p>Leo, tumejikita katika kutoa huduma muhimu kwa wakazi wa Kigamboni na maeneo jirani. Tunajivunia kuwa na uzoefu wa kutosha katika sekta ya huduma za simu, gesi, na huduma za kibenki.</p>
+                    <p>Malengo yetu ni kuendelea kupanua huduma zetu na kufikia zaidi ya wateja kote Tanzania, huku tukibaki mwaminifu kwa maadili yetu ya uaminifu, urahisi, na huduma bora kwa wateja.</p>
+                    <a href="#contact" class="btn">Mawasiliano</a>
+                </div>
+                <div class="about-image">
+                    <img src="station.jpg" alt="Kituo cha KHAMIS FUNDI">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bidhaa Zetu</h2>
+                <p>Bidhaa bora na za kipekee tunazozalisha na kuziuza</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="gas.jpg" alt="Gesi">
+                    </div>
+                    <div class="product-content">
+                        <h3>Gesi za Kupikia</h3>
+                        <p>Gesi salama za kupikia zenye uwezo tofauti kwa mahitaji yako ya nyumbani na biashara.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="marashi.jpg" alt="Perfume">
+                    </div>
+                    <div class="product-content">
+                        <h3>Perfume na Mafuta</h3>
+                        <p>Perfume na mafuta bora ya kupaka kutoka kwa chapa maarufu duniani kote.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="fundi.jpg" alt="Vocha">
+                    </div>
+                    <div class="product-content">
+                        <h3>Vocha za Simu</h3>
+                        <p>Vocha kwa mitandao yote ya simu nchini Tanzania kwa gharama nafuu zaidi.</p>
+                    </div>
+                </div>          
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mawasiliano</h2>
+                <p>Tupatie ujumbe wowote kuhusu huduma zetu au kuweka maagizo</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Mahali Tulipo</h3>
+                            <p>Kigamboni-Dar es Salaam,<br>Mtaa wa Big Brother</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Simu</h3>
+                            <p>+255 712 345 678<br>+255 765 432 109</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Barua Pepe</h3>
+                            <p>alfanfundi@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Saa za Ufunguzi</h3>
+                            <p>Jumatatu - Ijumaa: 8:00 asubuhi - 8:00 jioni</p>
+                            <p>Jumamosi - Jumapili: 9:00 asubuhi - 6:00 jioni</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Jina Kamili</label>
+                            <input type="text" id="name" class="form-control" placeholder="Andika jina lako..." required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Barua Pepe</label>
+                            <input type="email" id="email" class="form-control" placeholder="Andika barua pepe yako..." required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Namba ya Simu</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Andika namba ya simu..." required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Mada</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="">Chagua mada...</option>
+                                <option value="vocha">Vocha za Simu</option>
+                                <option value="gesi">Gesi</option>
+                                <option value="perfume">Perfume na Mafuta</option>
+                                <option value="benki">Huduma za Benki</option>
+                                <option value="pesa">Kutuma/Kupokea Pesa</option>
+                                <option value="other">Nyingine</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Ujumbe</label>
+                            <textarea id="message" class="form-control" placeholder="Andika ujumbe wako..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Tuma Ujumbe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>KHAMIS FUNDI</h3>
+                    <p>Tunatoa huduma bora za vocha, gesi, perfume na huduma za kibenki kwa wateja wetu kwa urahisi na ufanisi.</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/255743140476" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="www.facebook.com" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="www.instagram.com" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="www.twiter.com" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="www.tiktok.com" class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Mikondo ya Haraka</h3>
+                    <ul>
+                        <li><a href="#">Nyumbani</a></li>
+                        <li><a href="#about">Kuhusu Sisi</a></li>
+                        <li><a href="#services">Huduma</a></li>
+                        <li><a href="#products">Bidhaa</a></li>
+                        <li><a href="#contact">Mawasiliano</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Huduma Zetu</h3>
+                    <ul>
+                        <li><a href="#">Vocha za Simu</a></li>
+                        <li><a href="#">Uuzaji wa Gesi</a></li>
+                        <li><a href="#">Perfume na Mafuta</a></li>
+                        <li><a href="#">Huduma za Kibenkii</a></li>
+                        <li><a href="#">Kutuma na Kupokea Pesa</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Wasiliana Nasi</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kigamboni, Dar es Salaam</li>
+                        <li><i class="fas fa-phone-alt"></i> +255 712 345 678</li>
+                        <li><i class="fas fa-envelope"></i> alfanfundi@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 KHAMIS FUNDI. Haki zote zimehifadhiwa.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
